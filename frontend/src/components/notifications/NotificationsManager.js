@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-require('dotenv').config();
+
 // Mock NotificationForm Component
 const NotificationForm = ({ onSchedule, onSendImmediate, onCancel, loading }) => {
   const [formData, setFormData] = useState({
@@ -195,7 +195,8 @@ const NotificationsManager = () => {
   // Configure axios defaults
   useEffect(() => {
     // Set base URL to your backend server running on port 5000
-    axios.defaults.baseURL = 'REACT_APP_API_URL';
+   axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
     
     
     // Add auth token if available

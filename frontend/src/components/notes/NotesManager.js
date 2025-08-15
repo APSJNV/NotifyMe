@@ -12,7 +12,7 @@ const NotesManager = () => {
   const { token } = useAuth();
 
   const api = axios.create({
-    baseURL: 'process.env.REACT_APP_API_URL/notes',
+    baseURL: `${process.env.REACT_APP_API_URL}/notes`,
     headers: { Authorization: `Bearer ${token}` }
   });
 

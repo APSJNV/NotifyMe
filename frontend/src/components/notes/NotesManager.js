@@ -4,7 +4,6 @@ import { useAuth } from '../../context/AuthContext';
 import NoteForm from './NoteForm';
 import NoteCard from './NoteCard';
 import { Plus, Search, Bell } from 'lucide-react';
-
 const NotesManager = () => {
   const [notes, setNotes] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -13,7 +12,7 @@ const NotesManager = () => {
   const { token } = useAuth();
 
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api/notes',
+    baseURL: 'process.env.REACT_APP_API_URL/notes',
     headers: { Authorization: `Bearer ${token}` }
   });
 
